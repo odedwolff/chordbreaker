@@ -29,7 +29,7 @@ function testTriads(){
 function testPlayLine(){
 	var root =220;
 	notes = [root, synth.freqFromRoot(root,5), synth.freqFromRoot(root,4), root];
-	synth.playLine(notes, 700);
+	synth.playLine(700, notes);
 }
 
 

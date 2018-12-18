@@ -48,7 +48,7 @@ synth={
 		}
 	},
 
-	playLine: function(notes, noteLenMs){
+	playLine: function(noteLenMs, notes){
 		//beginTime = 0;
 		cntxt = new AudioContext();
 		for (i in notes){

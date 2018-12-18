@@ -1,10 +1,22 @@
 
 gameloop = {
 	setNextChord: function(){
-		parmas={
+		params={
 			includedChordTypes: _avaliableChordTypes()
-		}
+		};
 		_setNextChord(params);
+
+		document.getElementById("lblChordType").innerHTML="";
+	},
+
+	playCurrnetChordWhole: function (){
+		synth.playChord(chordLenMs, currentChord);
+	},
+	playCurrnetChordBroken: function(){
+		synth.playLine(singleNoteLenMs, currentChord);
+	},
+	showCurrentChordType: function(){
+		document.getElementById("lblChordType").innerHTML=currentChrodTypeName;
 	}
 }
 
@@ -18,7 +30,14 @@ var minFreq = 150;
 
 var maxFreq = 250;
 
+var chordLenMs = 1000;
+
+var singleNoteLenMs=700;
+
+var currentChrodTypeName;
 //
+
+
 
 
 
@@ -38,7 +57,10 @@ function _setNextChord(params){
 	var rndIdx = Math.floor((Math.random() * params["includedChordTypes"].length));
 	var chordType = params["includedChordTypes"][rndIdx]
 	currentChord = synth["chordTypeToFnc"][chordType](currentRoot);
+	//currentChrodTypeName = synth.chordTypeNames.chordType; 
+	currentChrodTypeName = synth.chordTypeNames[chordType]; 
 
+	console.log("set up next chords:" + currentChord);
 }
 
 
