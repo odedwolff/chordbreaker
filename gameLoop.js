@@ -17,7 +17,14 @@ gameloop = {
 	},
 	showCurrentChordType: function(){
 		document.getElementById("lblChordType").innerHTML=currentChrodTypeName;
-	}
+	},
+	setNextRoot : function(){
+		currentRoot = synth.randRoot(minFreq, maxFreq);
+	},
+	playMajorArpegio: _playMajorArpegio,
+	playMinorArpegio: _playMinorArpegio,
+	playAugArpegio: _playAugArpegio,
+	playDimArpegio: _playDimArpegio,
 }
 
 var currentRoot;
@@ -30,7 +37,7 @@ var minFreq = 150;
 
 var maxFreq = 250;
 
-var chordLenMs = 1000;
+var chordLenMs = 2000;
 
 var singleNoteLenMs=700;
 
@@ -62,5 +69,26 @@ function _setNextChord(params){
 
 	console.log("set up next chords:" + currentChord);
 }
+
+
+function playArpeg(chordType){
+	const chord = synth["chordTypeToFnc"][chordType](currentRoot);
+	synth.playLine(singleNoteLenMs, chord);
+}
+
+function _playMajorArpegio(){
+	playArpeg("keyChordTypeTriadMaj");
+
+}
+function _playMinorArpegio(){
+	playArpeg("keyChordTypeTriadMin");
+}
+function _playAugArpegio(){
+	playArpeg("keyChordTypeTriadAug");
+}
+function _playDimArpegio(){
+	playArpeg("keyChordTypeTriadDim");
+}
+ 
 
 
