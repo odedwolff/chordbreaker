@@ -21,6 +21,8 @@ gameloop = {
 	setNextRoot : function(){
 		currentRoot = synth.randRoot(minFreq, maxFreq);
 	},
+	playRoot: _playRoot,
+
 	playMajorArpegio: _playMajorArpegio,
 	playMinorArpegio: _playMinorArpegio,
 	playAugArpegio: _playAugArpegio,
@@ -76,9 +78,14 @@ function playArpeg(chordType){
 	synth.playLine(singleNoteLenMs, chord);
 }
 
+
+function _playRoot(){
+	//play a single note "chords"
+	synth.playChord(1000, [currentRoot]);
+}
+
 function _playMajorArpegio(){
 	playArpeg("keyChordTypeTriadMaj");
-
 }
 function _playMinorArpegio(){
 	playArpeg("keyChordTypeTriadMin");
