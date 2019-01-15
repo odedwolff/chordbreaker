@@ -2,7 +2,7 @@
 
 events = {
 	setListeners : function(){
-		document.getElementById("btnTest").addEventListener("click", test1);
+		//document.getElementById("btnTest").addEventListener("click", test1);
 		document.getElementById("btnSetNextChord").addEventListener("click", gameloop.setNextChord);
 		document.getElementById("btnPlayChordVer").addEventListener("click", gameloop.playCurrnetChordWhole);
 		document.getElementById("btnPlayChordHor").addEventListener("click", gameloop.playCurrnetChordBroken);

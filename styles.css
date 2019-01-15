@@ -1,0 +1,46 @@
+#divIdentifyTriad{
+  
+}
+
+.activitySection{
+    border: 2px;
+    background: yellow;
+    padding-bottom: 11px;
+    padding-left: 5px;
+}
+
+
+
+#lblChordType {
+    background: #d7dd98;
+    width: 100px;
+    height: 20px;
+
+}
+
+
+.activitySection h2{
+    font-size: 14px;
+    padding: 5px;
+}
+
+div#divCommonControls {
+    background: #a79999;
+    color: #d3fd19;
+    width: 150px;
+    text-align: center;
+    padding: 3px;
+}
+
+
+
+
+
+.activitySection button {
+    background: #323232;
+    color: #f2f2f2;
+    /* font-family: unset; */
+    /* font-size: 12px; */
+    /* border-radius: 6px; */
+    border: none;
+}

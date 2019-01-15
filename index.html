@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="styles.css">
 	<script src="declerations.js"></script>
 	<script src="init.js"></script>
 	<script src="events.js"></script>
@@ -18,15 +19,26 @@
 </head>
 <body onload = "init.onLoad()">
 	<div>
-		<div>
+		<!-- <div>
 			<button id=btnTest>test</button>
-		</div>
-		<div id="divIdentifyTriad">
+		</div> -->
+		<div id="divIdentifyTriad" class="activitySection">
 			<h2>play chords, sing indevedual notes, check</h2>
 			<button id=btnSetNextChord>set next chord</button>
 			<button id=btnPlayChordVer>play chord vertically</button>
 			<button id=btnPlayChordHor>play chord horizonatlly</button>
 			<button id=btnShowNextChord>show current chord type</button>
+			<div>
+				<label for="lblChordType">chordType</label>
+				<div id=lblChordType></div>
+				
+				<!-- <label id=lblChordType></label> -->
+				<!-- <textarea id=lblChordType></label> -->
+				
+				<!-- <div>
+					<label id=lblChordType></label>
+				</div> -->
+			</div>
 		</div>
 
 		<div id=divCommonControls>
@@ -34,7 +46,7 @@
 			<label id="lblFreqOutput"></label>
 		</div>
 
-		<div id="divSingArpegio">
+		<div id="divSingArpegio" class="activitySection">
 			<h2>play root,sing and check</h2>
 			<button onclick="gameloop.setNextRoot()">set next root</button>
 			<button onclick="gameloop.playRoot()">play root</button>
@@ -44,15 +56,13 @@
 			<button onclick="gameloop.playDimArpegio()">play diminished arpegio</button>
 		</div>
 
+<!-- 		
 		<div>
 			<button>play </button>
-
 		</div>
+ -->
 
-
-		<div>
-			<label id=lblChordType></label>
-		</div>
+		
 	</div>
 </body>
 </html>
