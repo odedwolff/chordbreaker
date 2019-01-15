@@ -21,22 +21,27 @@
 		<div>
 			<button id=btnTest>test</button>
 		</div>
-		<div>
+		<div id="divIdentifyTriad">
+			<h2>play chords, sing indevedual notes, check</h2>
 			<button id=btnSetNextChord>set next chord</button>
 			<button id=btnPlayChordVer>play chord vertically</button>
 			<button id=btnPlayChordHor>play chord horizonatlly</button>
 			<button id=btnShowNextChord>show current chord type</button>
 		</div>
 
-		<div>
+		<div id=divCommonControls>
+			<label for="lblFreqOutput">root requency</label>
+			<label id="lblFreqOutput"></label>
+		</div>
+
+		<div id="divSingArpegio">
+			<h2>play root,sing and check</h2>
 			<button onclick="gameloop.setNextRoot()">set next root</button>
 			<button onclick="gameloop.playRoot()">play root</button>
 			<button onclick="gameloop.playMajorArpegio()">play major arpegio</button>
 			<button onclick="gameloop.playMinorArpegio()">play minor arpegio</button>
 			<button onclick="gameloop.playAugArpegio()">play augumented arpegio</button>
 			<button onclick="gameloop.playDimArpegio()">play diminished arpegio</button>
-
-
 		</div>
 
 		<div>

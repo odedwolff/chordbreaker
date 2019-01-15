@@ -19,9 +19,12 @@ gameloop = {
 		document.getElementById("lblChordType").innerHTML=currentChrodTypeName;
 	},
 	setNextRoot : function(){
-		currentRoot = synth.randRoot(minFreq, maxFreq);
+		//currentRoot = synth.randRoot(minFreq, maxFreq);
+		_updateRootFreq(synth.randRoot(minFreq, maxFreq));
 	},
 	playRoot: _playRoot,
+
+	updateRootFreq: _updateRootFreq,
 
 	playMajorArpegio: _playMajorArpegio,
 	playMinorArpegio: _playMinorArpegio,
@@ -61,7 +64,9 @@ function _avaliableChordTypes(){
 
 //a single Q-A perios 
 function _setNextChord(params){
-	currentRoot = synth.randRoot(minFreq, maxFreq);
+	//currentRoot = synth.randRoot(minFreq, maxFreq);
+	_updateRootFreq(synth.randRoot(minFreq, maxFreq));
+	
 	//calculate chords frequencies 
 	var rndIdx = Math.floor((Math.random() * params["includedChordTypes"].length));
 	var chordType = params["includedChordTypes"][rndIdx]
@@ -95,6 +100,13 @@ function _playAugArpegio(){
 }
 function _playDimArpegio(){
 	playArpeg("keyChordTypeTriadDim");
+}
+
+
+function _updateRootFreq(freq){
+	currentRoot=freq;
+	const val = Number(freq).toFixed(2); 
+	document.getElementById("lblFreqOutput").innerHTML = val;
 }
  
 
